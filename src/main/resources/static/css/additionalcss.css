@@ -1,0 +1,13 @@
+body{
+    color:green;
+
+}
+
+.text-muted{
+    color:yellow;}
+
+.btn-xl{
+    color:blue;
+    background-color:black;
+    border-style: none;
+}

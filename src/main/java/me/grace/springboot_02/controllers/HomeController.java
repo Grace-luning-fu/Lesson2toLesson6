@@ -48,7 +48,7 @@ public class HomeController {
         return "l4confirm";
     }
 
-    @PostMapping("/songform")
+    @GetMapping("/songform")
     public String loadformPage(Model model)
     {
         model.addAttribute("Song", new Song());
@@ -56,7 +56,7 @@ public class HomeController {
     }
 
 
-    @GetMapping("/songform")
+    @PostMapping("/songform")
     public String loadFromPage(@Valid @ModelAttribute Song song, BindingResult bindingResult){
         if (bindingResult.hasErrors()) {
             return "songform";

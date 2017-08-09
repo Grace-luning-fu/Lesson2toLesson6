@@ -41,8 +41,8 @@ public class HomeController {
 
 
     @PostMapping("/bssongform")
-    public String bsloadFromPage(@Valid @ModelAttribute Song song, BindingResult bindingResult){
-        if (bindingResult.hasErrors()) {
+    public String bsloadFromPage(@Valid @ModelAttribute Song song, BindingResult bResult){
+        if (bResult.hasErrors()) {
             return "bssongform";
         }
 
@@ -90,6 +90,7 @@ public class HomeController {
 
         return "confirmsong";
     }
+
 
 
 }

@@ -51,7 +51,7 @@ public class HomeController {
     @GetMapping("/songform")
     public String loadformPage(Model model)
     {
-        model.addAttribute("Song", new Song());
+        model.addAttribute("song", new Song());
         return "songform";
     }
 

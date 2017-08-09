@@ -19,11 +19,37 @@ public class HomeController {
         return "index";
     }
 
+    @RequestMapping("/indexlog")
+    public String indexlog()
+    {
+        return "indexlog";
+    }
+
     @RequestMapping("/indexprocessform")
     public String indexconf(@RequestParam("login") String login, Model model){
         model.addAttribute("loginval", login);
         return "indexconfirm";
     }
+
+
+    @GetMapping("/bssongform")
+    public String bsloadformPage(Model model)
+    {
+        model.addAttribute("song", new Song());
+        return "bssongform";
+    }
+
+
+    @PostMapping("/bssongform")
+    public String bsloadFromPage(@Valid @ModelAttribute Song song, BindingResult bindingResult){
+        if (bindingResult.hasErrors()) {
+            return "bssongform";
+        }
+
+        return "bsconfirmsong";
+    }
+
+
 
     @RequestMapping("/lesson2")
     public String homePage(Model model)

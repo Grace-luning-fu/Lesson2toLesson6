@@ -65,6 +65,26 @@
         <div class="text-vertical-center">
             <h1>Hello World!</h1>
             <h3>Free Bootstrap Themes &amp; Templates</h3>
+            <br>
+            <h3>
+                <form action="#" th:action="@{/songform}" th:object="${song}" method="post">
+
+                    <span th:if="${#fields.hasErrors('name')}" th:error="*{name}">Name is required</span>
+                    <p>Enter the Name: <input type="text" th:field="*{name}" /></p>
+
+                    <p>Enter the Artist: <input type="text" th:field="*{artist}" /></p>
+
+                    <p>Enter the album: <input type="text" th:field="*{album}" /></p>
+
+                    <p>Enter the rating: <input type="text" th:field="*{rating}" /></p>
+
+                    <p>Enter the year: <input type="text" th:field="*{year}" /></p>
+
+                    <p><input type="submit" value="Add the Song" /> <input type="reset" value="Reset" /></p>
+
+
+                </form>
+            </h3>
         </div>
     </header>
 
